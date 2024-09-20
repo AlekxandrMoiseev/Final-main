@@ -15,4 +15,4 @@ COPY . .
 RUN go build -o app main.go
 
 # Команда для запуска приложения
-CMD ["./app"]
+CMD ["./a
