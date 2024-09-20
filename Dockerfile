@@ -1,18 +1,14 @@
 # Используем базовый образ Golang
 FROM golang:1.22.5
 
-# Указываем рабочую директорию внутри контейнера
 WORKDIR /app
 
-# Копируем go.mod и go.sum и устанавливаем зависимости
-COPY go.mod go.sum ./
+COPY . . 
+
 RUN go mod download
 
-# Копируем все исходные файлы проекта
-COPY . .
+COPY . . 
 
-# Собираем приложение
-RUN go build -o app main.go
+RUN go build  -o my_app .
 
-# Команда для запуска приложения
-CMD ["./a
+CMD ["./my_app"]
